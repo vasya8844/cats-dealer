@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Abyssin",
+    "price": 500,
+    "location": "Lviv",
+    "image": "https://olxua-ring02.akamaized.net/images/fotografii.jpg"
+  },
+  {
+    "name": "Abyssin",
+    "price": "550",
+    "location": "Lviv",
+    "image": "https://olxua-ring10.akamaized.net/images/3428509.jpg"
+  },
+  {
+    "name": "American Curl",
+    "price": 450,
+    "location": "Odessa",
+    "image": "https://olxug07.akamaized.net/images/11352876.jpg"
+  }
+]
