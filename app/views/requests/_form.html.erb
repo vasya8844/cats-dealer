@@ -3,12 +3,13 @@
     <%= form_tag(request_path, class: 'form-horizontal center') do %>
         <p>
           Select cat type:<br/>
-          <% cat_categories_array = CatCategory.all.map { |city| [city.name, city.id] } %>
-          <%= select_tag :cat_category, options_for_select(cat_categories_array, params[:cat_category]), multiple: true %>
+          <%= select_tag :cat_category, options_for_select(CatCategory.select_options, params[:cat_category]),
+                         multiple: true %>
         </p>
         <p>
           Select city:<br/>
-          <%= select_tag :city, options_for_select(City.select_options), multiple: true %>
+          <%= select_tag :city, options_for_select(City.select_options, params[:city]),
+                         multiple: true %>
         </p>
         <div><%= submit_tag 'Send request', class: 'btn btn-default' %></div>
     <% end %>
