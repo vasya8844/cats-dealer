@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe RequestsController do
+describe CatsController, type: :controller do
   describe 'GET #new' do
     before { get 'new' }
 

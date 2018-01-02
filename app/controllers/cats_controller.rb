@@ -1,4 +1,4 @@
-class RequestsController < ApplicationController
+class CatsController < ApplicationController
   def index
     @cats_list = CatItem.filter(params_filter(:city), params_filter(:cat_category))
 
