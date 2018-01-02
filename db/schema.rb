@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171230081409) do
+ActiveRecord::Schema.define(version: 20180102205643) do
 
   create_table "cat_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20171230081409) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cat_category_id"], name: "index_cat_items_on_cat_category_id"
+    t.index ["city_id", "cat_category_id"], name: "index_cat_items_on_city_id_and_cat_category_id"
     t.index ["city_id"], name: "index_cat_items_on_city_id"
     t.index ["source"], name: "index_cat_items_on_source"
   end

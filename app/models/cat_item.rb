@@ -3,6 +3,18 @@ class CatItem < ApplicationRecord
   belongs_to :city
 
   class << self
+    def filter(city, category)
+      result = all
+
+      result = result.where('city_id in (?)', city) if city
+      result = result.where('cat_category_id in (?)', category) if category
+
+      result = result.includes(:city, :cat_category)
+      result = result.order(:price)
+
+      result
+    end
+
     def persist_items(cat_items, source_key)
       transaction do
         where(source: source_key).destroy_all

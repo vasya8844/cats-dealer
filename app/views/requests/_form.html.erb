@@ -1,15 +1,15 @@
 <div class="row">
   <div class="col-md-2 col-md-offset-5">
-    <%= form_tag(request_path, class: 'form-horizontal center') do %>
+    <%= form_tag(requests_path, method: :get, class: 'form-horizontal center') do %>
         <p>
           Select cat type:<br/>
           <%= select_tag :cat_category, options_for_select(CatCategory.select_options, params[:cat_category]),
-                         multiple: true %>
+                         multiple: true, include_blank: '-- All --' %>
         </p>
         <p>
           Select city:<br/>
           <%= select_tag :city, options_for_select(City.select_options, params[:city]),
-                         multiple: true %>
+                         multiple: true, include_blank: '-- All --' %>
         </p>
         <div><%= submit_tag 'Send request', class: 'btn btn-default' %></div>
     <% end %>
