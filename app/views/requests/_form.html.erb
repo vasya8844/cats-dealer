@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-2 col-md-offset-5">
+    <%= form_tag(request_path, class: 'form-horizontal center') do %>
+        <p>
+          Select cat type:<br/>
+          <% cat_categories_array = CatCategory.all.map { |city| [city.name, city.id] } %>
+          <%= select_tag :cat_category, options_for_select(cat_categories_array, params[:cat_category]), multiple: true %>
+        </p>
+        <p>
+          Select city:<br/>
+          <%= select_tag :city, options_for_select(City.select_options), multiple: true %>
+        </p>
+        <div><%= submit_tag 'Send request', class: 'btn btn-default' %></div>
+    <% end %>
+  </div>
+</div>
+<br>

@@ -1,0 +1,31 @@
+module CatItemSynchronizer::CatsApi
+  class AmazonawsXML < Base
+    def source_key
+      :amazon_xml
+    end
+
+    def cat_items
+      cat_nodes = rich_resource
+      raise IOError, 'Got empty xml' unless cat_nodes.count > 0
+
+      cat_nodes.collect do |cat_node|
+        cat_node.xpath('*').map { |cat_attr|
+          [cat_attr.name, cat_attr.text]
+        }.to_h
+      end
+    end
+
+    protected
+
+    def resource_url
+      'https://nh7b1g9g23.execute-api.us-west-2.amazonaws.com/dev/cats/xml'
+    end
+
+    private
+
+    def rich_resource
+      doc = Nokogiri::XML(extract)
+      doc.xpath('cats/cat')
+    end
+  end
+end

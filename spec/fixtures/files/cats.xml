@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cats>
+  <cat>
+    <name>Maine Coon</name>
+    <price>650</price>
+    <location>Lviv</location>
+    <image>
+      https://olxua-ring08.akamaized.net/images_slandocomua/273255938_8_1000x700_kotyata-meyn-kun-ot-chempiona-mira-iz-elitnogo-pitomnika-_rev032.jpg
+    </image>
+  </cat>
+  <cat>
+    <name>Sphynx</name>
+    <price>250</price>
+    <location>Odessa</location>
+    <image>
+      https://olxua-ring11.akamaized.net/images_slandocomua/478774802_2_1000x700_predlagayu-malchikov-porody-donskih-sfinksov-fotografii.jpg
+    </image>
+  </cat>
+  <cat>
+    <name>Persian</name>
+    <price>100</price>
+    <location>Kharkiv</location>
+    <image>
+      https://olxua-ring02.akamaized.net/images_slandocomua/499773040_3_1000x700_persidskiy-dlinnosherstnyy-malchik-radik-koshki.jpg
+    </image>
+  </cat>
+  <cat>
+    <name>Siamese</name>
+    <price>40</price>
+    <location>Kharkiv</location>
+    <image>https://olxua-ring05.akamaized.net/images_slandocomua/500276292_1_1000x700_kot-po-imeni-tom-borispol.jpg
+    </image>
+  </cat>
+</cats>
