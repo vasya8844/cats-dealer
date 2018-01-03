@@ -1,8 +1,6 @@
 class CatsController < ApplicationController
   def index
-    @cats_list = CatItem.filter(params_filter(:city), params_filter(:cat_category))
-
-    @best_price = @cats_list.first&.price
+    @best_price, @cats_list = CatItem.filter_items(params_filter(:city), params_filter(:cat_category))
 
     current_page = params[:page] || 1
     @cats_list = @cats_list.paginate(page: current_page, per_page: 5)

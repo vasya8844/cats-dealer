@@ -3,16 +3,16 @@ class CatItem < ApplicationRecord
   belongs_to :city
 
   class << self
-    def filter(city, category)
+    def filter_items(cities, categories)
       result = all
 
-      result = result.where('city_id in (?)', city) if city
-      result = result.where('cat_category_id in (?)', category) if category
+      result = result.where('city_id in (?)', cities) if cities
+      result = result.where('cat_category_id in (?)', categories) if categories
 
       result = result.includes(:city, :cat_category)
       result = result.order(:price)
 
-      result
+      [result.first&.price, result]
     end
 
     def persist_items(cat_items, source_key)

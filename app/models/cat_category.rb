@@ -1,6 +1,6 @@
 class CatCategory < ApplicationRecord
   class << self
-    def define_categoary(cat_item)
+    def define_category(cat_item)
       find_or_create_by name: cat_item[:name]
     end
 
