@@ -1,9 +1,12 @@
 require 'rails_helper'
 
 describe CatItemSynchronizer::Scheduler do
-  it 'invoke cat_items from api sources' do
-    expect_any_instance_of(CatItemSynchronizer::CatsApi::AmazonawsJSON).to receive(:cat_items).and_return []
-    expect_any_instance_of(CatItemSynchronizer::CatsApi::AmazonawsXML).to receive(:cat_items).and_return []
-    described_class.run
+  let(:source_inst) { spy('api_source_inst') }
+
+  it 'invoke cat_items on api sources' do
+    allow(source_inst).to receive(:source_key).and_return []
+    described_class.send(:process_source, source_inst)
+
+    expect(source_inst).to have_received(:cat_items)
   end
 end

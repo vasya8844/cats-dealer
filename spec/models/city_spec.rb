@@ -12,6 +12,6 @@ describe City, type: :model do
 
   it 'create and return when name not exists' do
     city = City.define_city(cat_item_params)
-    expect(city.persisted?).to be_truthy
+    expect(city).to be_persisted
   end
 end

@@ -1,17 +1,23 @@
-module CatItemSynchronizer::CatsApi
-  class Base
-    def source_key
-      raise 'to be defined'
-    end
+module CatItemSynchronizer
+  module CatsApi
+    class Base
+      def source_key
+        raise 'to be defined'
+      end
 
-    protected
+      protected
 
-    def resource_url
-      raise 'to be defined'
-    end
+      def resource_url
+        raise 'to be defined'
+      end
 
-    def extract
-      RestClient.get resource_url
+      def extract
+        rest_client.get resource_url
+      end
+
+      def rest_client
+        RestClient
+      end
     end
   end
 end

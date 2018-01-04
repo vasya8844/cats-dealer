@@ -1,6 +1,7 @@
 class CatsController < ApplicationController
   def index
-    @best_price, @cats_list = CatItem.filter_items(params_filter(:city), params_filter(:cat_category))
+    @best_price, @cats_list = CatItem.filter_items(params_filter(:city),
+                                                   params_filter(:cat_category))
 
     current_page = params[:page] || 1
     @cats_list = @cats_list.paginate(page: current_page, per_page: 5)
@@ -9,8 +10,7 @@ class CatsController < ApplicationController
   private
 
   def params_filter(key)
-    if (values = params[key]) && !values.include?('')
-      return values
-    end
+    values = params[key]
+    values if values && !values.include?('')
   end
 end

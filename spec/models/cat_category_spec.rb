@@ -12,6 +12,6 @@ describe CatCategory, type: :model do
 
   it 'create and return when name not exists' do
     category = CatCategory.define_category(cat_item_params)
-    expect(category.persisted?).to be_truthy
+    expect(category).to be_persisted
   end
 end
