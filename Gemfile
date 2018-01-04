@@ -12,6 +12,7 @@ gem 'rails', '~> 5.1.1'
 gem 'rest-client'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
+gem 'uglifier'
 gem 'whenever', require: false
 gem 'will_paginate'
 
